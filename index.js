@@ -2,7 +2,7 @@ const express= require('express')
 
 const app= express()
 
-app.get('/',(req,res)=>{
+app.get('/servercheck',(req,res)=>{
     res.send('first app check')
 })
 
