@@ -1,6 +1,6 @@
 import React from 'react';
 import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
-
+import '../../src/index.css';
 
 class CountryMenu extends React.Component {
     state={
@@ -35,8 +35,10 @@ class CountryMenu extends React.Component {
                         <CountryDropdown
                             value= {country}
                             onChange={(val)=>this.selectCountry(val)}
+                            
                         />
-
+                    </div>
+                    <div>
                         <RegionDropdown
                             country={country}
                             value={region}
