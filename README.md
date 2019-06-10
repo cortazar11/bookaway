@@ -13,3 +13,7 @@ I will try to use what I know more:
 - A node server in the server side of the app.
 - Express framework in the server side for the http requests to node.
 - MongoDB and mongoose library for the question of the persistence of the data.
+
+# First Component - Landing Page/Form
+- The landing page holds the form where the user interacts with the web.
+- The form contains two drop-down menus with countries and regions and two fields that display one calendar for the check-in day and another for the check-out day, pretty much as in www.booking.com. Only that instead cities the user choose countries and their regions.
