@@ -6,6 +6,7 @@ const keys=require('./config/dev')
 
 require('./models/Hoster')
 
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI,{ useNewUrlParser: true },function(err){
       if(err) throw err;
       console.log('Succesful connection')
