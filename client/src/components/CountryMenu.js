@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import '../../src/index.css';
 
 class CountryMenu extends React.Component {
@@ -24,7 +24,6 @@ class CountryMenu extends React.Component {
     }
 
     render(){
-        console.log('country input: '+JSON.stringify(this.props.input))
         const {country,region} = this.state;
 
         return (

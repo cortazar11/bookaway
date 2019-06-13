@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 
 const Header=()=>{
         return (
             <div>
-                <h1 className="ui header" >BookAway.com</h1>
+                <Link to="/"><h1 className="ui header" >BookAway.com</h1></Link>
+                <div className="ui secondary menu">
+                    <Link to="/hosters/new" className="item">New Hoster</Link>
+                </div>
                 <div className="ui divider"></div>
             </div>
             

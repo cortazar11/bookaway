@@ -27,10 +27,9 @@ class DatePicker extends React.Component {
 }
 
     render(){
-        const {input}= this.props
-        
-        return (
-            <div>
+            
+            return (
+            
                 <div className="field">
                     <label>{this.props.label}</label>
                     <div>
@@ -50,7 +49,7 @@ class DatePicker extends React.Component {
                 
                 </div>
                 
-            </div>
+            
             
         )
     }

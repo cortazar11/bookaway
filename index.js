@@ -1,10 +1,26 @@
-const express= require('express')
+const express= require('express');
+const mongoose= require('mongoose');
+const bodyParser=require('body-parser');
+const cors = require('cors');
+const keys=require('./config/dev')
+
+require('./models/Hoster')
+
+mongoose.connect(keys.mongoURI,{ useNewUrlParser: true },function(err){
+      if(err) throw err;
+      console.log('Succesful connection')
+})
 
 const app= express()
+
+app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/servercheck',(req,res)=>{
     res.send('first app check')
 })
+
+require('./routes/hosterRoutes')(app);
 
 
 if (process.env.NODE_ENV === 'production') {
