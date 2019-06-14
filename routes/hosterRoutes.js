@@ -1,10 +1,10 @@
 const mongoose=require('mongoose');
+const moment= require('moment');
 
 const Hoster=mongoose.model('hosters');
 
 module.exports= app=>{
     app.post('/api/hosters',(req,res)=>{
-        console.log('req.body: '+JSON.stringify(req.body))
             const {hostname,country,dates:{startDate,endDate}}=req.body;
 
             const hoster1= new Hoster({
@@ -17,11 +17,18 @@ module.exports= app=>{
                 dateSent: Date.now()
             })
 
-            hoster1.save(function(err){
-                    if(err) throw err
-                    console.log('saved to hosters collection')
-            })
+            hoster1.save()
 
             res.send('O.K. Well Done!. Your data is saved')
+    })
+
+    
+
+    app.post('/api/hostersList',async (req,res)=>{
+           const hosters= await Hoster.find({country:req.body.country})
+                .where('dates.startDate').gte(moment(req.body.dates.startDate))
+                .where('dates.endDate').lte(moment(req.body.dates.endDate)).select('-country -dates')
+        
+            res.send(hosters)
     })
 }

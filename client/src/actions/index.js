@@ -10,3 +10,16 @@ export const createHoster=(formValues)=>{
        
     }
 }
+
+
+export const fetchHosters=(formValues)=>{
+    return async (dispatch)=>{
+        const res=await axios.post('/api/hostersList',formValues)
+        dispatch({
+            type: 'FETCH_HOSTERS',
+            payload: res.data
+        })
+        
+    }
+}
+
