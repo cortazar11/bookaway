@@ -7,7 +7,10 @@ const Header=()=>{
             <div>
                 <Link to="/"><h1 className="ui header" >BookAway.com</h1></Link>
                 <div className="ui secondary menu">
-                    <Link to="/hosters/new" className="item">New Hoster</Link>
+                    <div className="right menu">
+                        <Link to="/hosters/new" className="item">New Host</Link>
+                    </div>
+                    
                 </div>
                 <div className="ui divider"></div>
             </div>

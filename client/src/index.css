@@ -1,5 +1,30 @@
+/*
 .ui.form select {
     display: inline-block;
     width: 25.5%;
 }
+*/
+
+.six.wide.column {
+    border-right: solid 1px;
+    
+}
+
+.ui.grid>.column:not(.row){
+    padding-top: 3em;
+}
+
+.ui.divider {
+    background-color: darkblue;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+}
+
+
 

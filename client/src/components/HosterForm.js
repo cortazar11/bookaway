@@ -24,18 +24,22 @@ class HosterForm extends React.Component {
     render(){
         return (
             <div>
-                <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error" >
-                    <Field name="hostname" type="text" component={this.renderHosterName} label="Hoster Name" />
-                    <Field name="country" component={CountryMenu} change={this.props.change} label="Where are you from?" />
+                <h3>FORM FOR HOSTS</h3>
+                <div className="ui segment">
+                    <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error" >
+                        <Field name="hostname" type="text" component={this.renderHosterName} label="Host Name" />
+                        <Field name="country" component={CountryMenu} change={this.props.change} label="Where are you from?" />
+                        <p></p>
+                        <Field name="dates" component={DatePicker} change={this.props.change} label="How long will you take a volunteer?"/>
+                        <p></p>
+                        <button className="ui button">SUBMIT</button>
+                        
+                    </form>
                     <p></p>
-                    <Field name="dates" component={DatePicker} change={this.props.change} label="How long will you take a volunteer?"/>
-                    <p></p>
-                    <button className="ui button">SUBMIT</button>
-                    
-                </form>
-                <p></p>
-                <div>{this.props.hosters}</div>
+                    <div>{this.props.hosters}</div>
+                </div>
             </div>
+            
         )
     }
     
