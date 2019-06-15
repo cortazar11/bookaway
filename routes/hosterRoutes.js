@@ -26,8 +26,8 @@ module.exports= app=>{
 
     app.post('/api/hostersList',async (req,res)=>{
            const hosters= await Hoster.find({country:req.body.country})
-                .where('dates.startDate').gte(moment(req.body.dates.startDate))
-                .where('dates.endDate').lte(moment(req.body.dates.endDate)).select('-country -dates')
+                .where('dates.startDate').lte(moment(req.body.dates.startDate))
+                .where('dates.endDate').gte(moment(req.body.dates.endDate)).select('-country -dates')
         
             res.send(hosters)
     })
