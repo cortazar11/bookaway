@@ -4,11 +4,20 @@ const {Schema} = mongoose;
 
 const hosterSchema=new Schema({
     hostname: String,
+    hostdirection: String,
+    stars: Number,
     country: String,
     dates: {
         startDate: Date,
         endDate: Date
-    }
+    },
+    description: String,
+    typehelp: String,
+    culturalexchange: String,
+    help: String,
+    language: String,
+    accommodation: String,
+    hoursexpected: String
    
 })
 

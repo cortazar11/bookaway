@@ -1,6 +1,7 @@
 
 const initialState={
-    hosters: []
+    hosters: [],
+    hoster: {}
 }
 
 export default function (state=initialState,action){
@@ -11,6 +12,13 @@ export default function (state=initialState,action){
                 ...state,
                 hosters: action.payload
             }
+            
+        case 'FETCH_HOST':
+            return {
+                ...state,
+                hoster : action.payload
+            }
+            
         default:
             return state
     }

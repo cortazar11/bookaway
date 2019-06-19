@@ -23,3 +23,15 @@ export const fetchHosters=(formValues)=>{
     }
 }
 
+export const fetchHost=(id)=>{
+    console.log('id: '+id)
+        return async (dispatch)=>{
+            const res= await axios.get(`/api/hosters/${id}`)
+            console.log('res: '+JSON.stringify(res))
+            dispatch({
+                type: 'FETCH_HOST',
+                payload: res.data
+            })
+        }
+}
+

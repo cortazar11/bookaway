@@ -15,7 +15,7 @@ const App=()=>{
                 <Route path="/" exact component={Landing} />
                 <Route path='/hosters' exact component={ListHosters} />
                 <Route path="/hosters/new" component={HosterNew} />
-                <Route path="/detailed" component={DetailedHoster}/>
+                <Route path="/hosters/:id" component={DetailedHoster}/>
             </BrowserRouter>
         </div>
     )
