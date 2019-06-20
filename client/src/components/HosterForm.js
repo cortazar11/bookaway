@@ -54,7 +54,7 @@ class HosterForm extends React.Component {
                         <button className="ui button">SUBMIT</button>
                         
                     </form>
-                    
+                    <div>{this.props.hosters}</div>
                 </div>
             </div>
             

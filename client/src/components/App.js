@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Landing from './Landing';
 import ListHosters from './ListHosters';
@@ -12,10 +12,13 @@ const App=()=>{
         <div className="ui container">
             <BrowserRouter>
                 <Header />
-                <Route path="/" exact component={Landing} />
-                <Route path='/hosters' exact component={ListHosters} />
-                <Route path="/hosters/new" component={HosterNew} />
-                <Route path="/hosters/:id" component={DetailedHoster}/>
+                <Switch>
+                    <Route path="/" exact component={Landing} />
+                    <Route path='/hosters' exact component={ListHosters} />
+                    <Route path="/hosters/new" exact component={HosterNew} />
+                    <Route path="/hosters/:id" exact component={DetailedHoster}/>
+                </Switch>
+                
             </BrowserRouter>
         </div>
     )

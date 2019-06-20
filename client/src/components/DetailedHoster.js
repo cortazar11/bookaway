@@ -15,13 +15,21 @@ class DetailedHoster extends React.Component{
         const host=this.props.host
         console.log('host: '+JSON.stringify(host.dates))
         
-        //const startDate= host && host.dates ? moment(host.dates.startDate).format('DD MMM YYYY') : null
-        //const endDate=host && host.dates ? moment(host.dates.endDate).format('DD MMM YYYY') : null
-        
+        const startDate= host && host.dates ? moment(host.dates.startDate).format('DD MMM YYYY') : null
+        const endDate=host && host.dates ? moment(host.dates.endDate).format('DD MMM YYYY') : null
+        console.log(startDate)
+        console.log(endDate)
         return (
             <div>
                 <h3>AVAILABILITY</h3>
-                
+                <div className="ui horizontal segments">
+                    <div className="ui segment">
+                        {startDate}
+                    </div>
+                    <div className="ui segment">
+                        {endDate}
+                    </div>
+                </div>
                 <h3>DESCRIPTION</h3>
                 <div className="ui segment">{host.description}</div>
                 <h3>TYPE OF HELP</h3>

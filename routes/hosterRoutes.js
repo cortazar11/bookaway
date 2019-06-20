@@ -44,7 +44,6 @@ module.exports= app=>{
 
     app.get('/api/hosters/:id',async (req,res)=>{
             const hoster= await Hoster.findById(req.params.id)
-            console.log(hoster)
             res.send(hoster)
     })
 }
