@@ -1,0 +1,20 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t miguelmartinez11/bookaway-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run e CI=true miguelmartinez11/bookaway-test npm test -- --coverage
+
+after_success:
+  - docker build -t miguelmartinez11/bookaway-client ./client
+  - docker build -t miguelmartinez11/bookaway-nginx ./nginx
+  - docker build -t miguelmartinez11/bookaway-server .
+
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push miguelmartinez11/bookaway-client
+  - docker push miguelmartinez11/bookaway-nginx
+  - docker push miguelmartinez11/bookaway-server
