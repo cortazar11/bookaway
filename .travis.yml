@@ -23,7 +23,7 @@ deploy:
   provider: elasticbeanstalk
   region: eu-west-1
   app: bookaway
-  env: Bookaway-env-1
+  env: Bookaway-env
   bucket_name: elasticbeanstalk-eu-west-1-700002782697
   bucket_path: bookaway-multi
   on:
